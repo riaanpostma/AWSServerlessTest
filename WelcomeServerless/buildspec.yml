@@ -1,0 +1,13 @@
+
+
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        java: 8.0
+  build:
+    commands:
+      - sam package --template-file samtemplate.yml --s3-bucket lambda-function-bucket-us-east-1-1633487254979 --output-template-file packaged-template.yml
+artifacts:
+  files:
+    - packaged-template.yml
